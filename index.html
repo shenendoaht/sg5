@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shen Game</title>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section id="welcome">
+      <header><h1>Welcome</h1></header>
+      <div class="scroll">
+        <div class="scroll-text">
+          <h2>Lil Quest</h2>
+          <p class="letter">
+            This game is <strong> still </strong> a work in progress. <br />
+            It demonstrates my skills with HTML, CSS and JavaScript. <br />
+            <em>Bon chance</em> on this lil adventure!
+          </p>
+          <p class="instructions">
+            Name your character, explore the world and defeat your adversaries!
+          </p>
+          <p class="special-thx">
+            Special thanks: <br />
+            frenz <br />
+            romanz <br />
+            countrymen? <br />
+            Squirrelly <br /><em>*mini tribal* </em>
+          </p>
+          <p class="resources">
+            Resources: <br />
+            <a href="https://www.Scrimba.com" target="_blank"> Scrimba </a>
+            <br />
+            <a
+              href="https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189/"
+              target="_blank"
+            >
+              HTML & CSS by Jon Duckett
+            </a>
+            <br />
+            <a
+              href="https://www.amazon.com/Eloquent-JavaScript-3rd-Introduction-Programming/dp/1593279507/"
+              target="_blank"
+            >
+              Eloquent JavaScript by Marijn Haverbeke
+            </a>
+          </p>
+        </div>
+        <!-- scroll text -->
+        <button class="btn nav-btn" id="ready-btn">Ready?</button>
+      </div>
+      <!-- scroll -->
+      <div id="character">
+        <input
+          class="input"
+          type="text"
+          id="input-el"
+          placeholder="Name your Character"
+          required
+        />
+        <button class="btn" id="player-btn">Name Character</button>
+        <div id="roll-btns">
+          <button class="btn roll-btn" id="hp-btn">Roll HP</button>
+          <button class="btn roll-btn" id="str-btn">Roll STR</button>
+          <button class="btn roll-btn" id="def-btn">Roll DEF</button>
+          <button class="btn roll-btn" id="ab-btn">Roll AB</button>
+          <button class="btn roll-btn" id="gp-btn">Roll GP</button>
+        </div>
+        <!-- roll btns-->
+      </div>
+      <!-- character-->
+      <div id="wel-player">
+        <div class="player"></div>
+        <div class="stats" id="wel-stats"></div>
+      </div>
+
+      <footer>
+        <nav>
+          <ul>
+            <li><button class="btn nav-btn" id="town-btn">To Town</button></li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- Welcome -->
+    <section id="townSquare">
+      <header>
+        <h1>Town</h1>
+        <h2 id="town-message"></h2>
+        <h4 id="town-dialogue"></h4>
+      </header>
+      <button class="btn explore-btn" id="explore-town">Explore</button>
+      <div class="content" id="town-content">
+        <div id="fountain">
+          <button class="btn search-btn" id="fountain-btn">
+            Search Fountain
+          </button>
+          <div class="item" id="coins"></div>
+          <button class="btn item-btn" id="coin-btn">Take coins</button>
+        </div>
+        <div class="people">
+          <div id="monk">
+            <button class="btn talk-btn" id="monk-btn">Talk to Monk</button>
+          </div>
+          <div id="oldwoman">
+            <button class="btn talk-btn" id="maid-btn">
+              Talk to Old Woman
+            </button>
+          </div>
+        </div>
+        <!-- people -->
+      </div>
+      <div id="town-player">
+        <div class="player"></div>
+        <div class="stats" id="town-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li><button class="btn nav-btn" id="house-btn">House</button></li>
+            <li><button class="btn nav-btn" id="tav-btn">Tavern</button></li>
+            <li><button class="btn nav-btn" id="shop-btn">Shop</button></li>
+            <li><button class="btn nav-btn" id="arena-btn">Arena</button></li>
+            <li><button class="btn nav-btn" id="forest-btn">Forest</button></li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- town square -->
+    <section id="house">
+      <header>
+        <h1>Your House</h1>
+        <h4 id="house-dialogue"></h4>
+      </header>
+      <div id="house-player">
+        <div class="player"></div>
+        <div class="stats" id="house-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="house-town-btn">Town</button>
+            </li>
+            <li>
+              <button class="btn nav-btn" id="bedroom-btn">Upstairs</button>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </section>
+    <!-- house -->
+    <section id="bedroom">
+      <header>
+        <h1>Your Bedchamber</h1>
+        <h2 id="bedroom-message"></h2>
+      </header>
+      <button class="btn lev-btn" id="level-btn">Level Up</button>
+      <div id="bed-player">
+        <div class="player"></div>
+        <div class="stats" id="bed-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="bed-house-btn">Downstairs</button>
+            </li>
+            <li>
+              <button class="btn nav-btn" id="chest-btn">Chest</button>
+            </li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- bedroom -->
+    <section id="chest">
+      <header><h1>Inventory</h1></header>
+      <button class="btn explore-btn" id="explore-chest">
+        Check Inventory
+      </button>
+      <div id="chest-content">
+        <div class="scroll" id="chest-scroll">
+          <div class="scroll-text">
+            <h2>Inventory</h2>
+            <ul id="item-inventory">
+              ITEMS
+            </ul>
+            <ul id="weapon-inventory">
+              WEAPONS
+            </ul>
+            <ul id="foe-inventory">
+              DEFEATED FOES
+            </ul>
+          </div>
+          <button class="btn nav-btn" id="close-chest">Close Inventory</button>
+        </div>
+        <!-- scroll -->
+      </div>
+      <!-- chest cont-->
+      <div id="chest-player">
+        <div class="player"></div>
+        <div class="stats" id="chest-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="chest-bed-btn">Bedroom</button>
+            </li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- chest -->
+    <section id="tavern">
+      <header>
+        <h1>Tavern</h1>
+        <h2 id="tavern-message"></h2>
+      </header>
+      <button class="btn explore-btn" id="explore-tavern">Explore</button>
+      <div class="content" id="tavern-content">
+        <h3 id="bar-dialogue"></h3>
+        <div class="bar-talk-btns">
+          <button class="btn talk-btn" id="bartender-btn">
+            Talk to Bartender
+          </button>
+          <button class="btn talk-btn" id="drunkard-btn">Talk to Drunk</button>
+        </div>
+        <div class="bar-people">
+          <div id="bartender">
+            <div id="bar-btns">
+              <button class="btn choice-btn" id="bar-yes-btn">Yes</button>
+              <button class="btn choice-btn" id="bar-no-btn">No</button>
+            </div>
+          </div>
+          <!-- bar-->
+          <div id="drunk">
+            <div id="drunk-btns">
+              <button class="btn choice-btn" id="drunk-yes-btn">Yes</button>
+              <button class="btn choice-btn" id="drunk-no-btn">No</button>
+            </div>
+            <!-- drunk btns -->
+          </div>
+          <!-- drunk-->
+        </div>
+        <!-- people-->
+        <div class="drinks">
+          <div class="item" id="mead"></div>
+          <button class="btn item-btn" id="mead-btn">Drink Mead</button>
+          <div class="item" id="ale"></div>
+          <button class="btn item-btn" id="ale-btn">Drink Ale</button>
+        </div>
+        <!--drinks-->
+
+        <div id="table">
+          <div class="item" id="purse"></div>
+          <button class="btn item-btn" id="purse-btn">Take Purse</button>
+        </div>
+        <!-- table-->
+      </div>
+      <!-- tav content-->
+      <button class="btn search-btn" id="search-table">Search Table</button>
+      <div id="tav-player">
+        <div class="player"></div>
+        <div class="stats" id="tav-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="tav-town-btn">To Town</button>
+            </li>
+            <li><button class="btn nav-btn" id="room-btn">Upstairs</button></li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- tavern -->
+    <section id="room">
+      <header>
+        <h1>Room</h1>
+        <h2 id="room-message"></h2>
+      </header>
+      <button class="btn explore-btn" id="explore-room">Explore</button>
+      <div class="content" id="room-content">
+        <div class="item" id="potion"></div>
+        <button class="btn item-btn" id="potion-btn">Take Potion</button>
+        <button class="btn" id="rest-btn">Rest</button>
+      </div>
+      <!--room content-->
+      <div id="room-player">
+        <div class="player"></div>
+        <div class="stats" id="room-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="tav-ret-btn">Downstairs</button>
+            </li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- room -->
+    <section id="shop">
+      <header>
+        <h1>Shop</h1>
+        <h2 id="shop-message"></h2>
+        <h4 id="shop-dialogue"></h4>
+      </header>
+      <button class="btn explore-btn" id="explore-shop">Explore</button>
+      <div class="weapon" id="training-sword">
+        <button class="btn item-btn" id="t-sword-btn">
+          Take Training Sword
+        </button>
+      </div>
+      <!-- training sword-->
+      <button class="btn" id="shop-item-btn">View Wares</button>
+      <div id="shop-content">
+        <div class="shop-items">
+          <div class="weapon" id="dagger">
+            <label> Dagger: </label> <label> <em> 10gp </em> </label>
+            <button class="btn buy-btn" id="dagger-btn">Buy Dagger</button>
+          </div>
+          <div class="weapon" id="bow">
+            <label> Bow: </label> <label> <em> 30gp </em> </label>
+            <button class="btn buy-btn" id="bow-btn">Buy Bow</button>
+          </div>
+          <div class="weapon" id="sword">
+            <label> Sword: </label> <label> <em> 100gp </em> </label>
+            <button class="btn buy-btn" id="sword-btn">Buy Sword</button>
+          </div>
+        </div>
+        <!-- shop items -->
+      </div>
+      <!-- shop content -->
+      <div id="shop-player">
+        <div class="player"></div>
+        <div class="stats" id="shop-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="shop-town-btn">To Town</button>
+            </li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- shop -->
+    <section id="arena">
+      <header>
+        <h1>Arena</h1>
+        <h2 id="arena-message"></h2>
+        <h4 id="arena-dialogue"></h4>
+      </header>
+      <button class="btn explore-btn" id="explore-arena">Explore</button>
+      <div class="content" id="arena-content">
+        <div class="item" id="helm"></div>
+        <button class="btn item-btn" id="helm-btn">Take Helm</button>
+      </div>
+      <div id="arena-player">
+        <div class="player"></div>
+        <div class="stats" id="arena-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="arena-town-btn">To Town</button>
+            </li>
+            <li>
+              <button class="btn nav-btn" id="stage-btn">To Fight Stage</button>
+            </li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- arena -->
+    <section id="stage">
+      <header id="stage-header">
+        <h1>Battledome</h1>
+        <h2 id="stage-message"></h2>
+        <h4 id="stage-dialogue"></h4>
+      </header>
+      <button class="btn nav-btn" id="ring-btn">Enter Battledome</button>
+      <div class="content" id="stage-content">
+        <div class="foe">
+          <!-- opponent-->
+          <div id="opponent"></div>
+          <div class="foe-stats" id="op-stats"></div>
+        </div>
+        <div class="challenge-btns" id="challenge">
+          <!-- challenge buttons-->
+          <button class="btn init-btn" id="init-btn">
+            Roll For Initiative
+          </button>
+          <button class="btn fight-btn" id="fight-btn">FIGHT</button>
+        </div>
+        <!-- challenge buttons-->
+        <div><button class="btn" id="op-btn">Get Opponent</button></div>
+      </div>
+      <div id="stage-player">
+        <div class="player"></div>
+        <div class="stats" id="stage-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="arena-ret-btn">
+                Abandon Fight
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- stage -->
+    <section id="forest">
+      <header>
+        <h1>Forest</h1>
+        <h2 id="forest-message"></h2>
+        <h4 id="forest-dialogue"></h4>
+      </header>
+      <button class="btn explore-btn" id="explore-forest">Explore</button>
+      <div class="content" id="forest-content">
+        <div id="person">
+          <div id="soldier">
+            <button class="btn talk-btn" id="soldier-btn">
+              Talk to Soldier
+            </button>
+          </div>
+        </div>
+        <div id="tree">
+          <div class="item" id="arrows">
+            <button class="btn item-btn" id="arrow-btn">Take arrows</button>
+          </div>
+          <button class="btn search-btn" id="tree-btn">Search Tree</button>
+        </div>
+      </div>
+      <div id="forest-player">
+        <div class="player"></div>
+        <div class="stats" id="forest-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="forest-town-btn">Town</button>
+            </li>
+            <li>
+              <button class="btn nav-btn" id="bridge-btn">Forward</button>
+            </li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- forest -->
+    <section id="bridge">
+      <header>
+        <h1>Bridge</h1>
+        <h2 id="bridge-message"></h2>
+        <h4 id="bridge-dialogue"></h4>
+      </header>
+      <button class="btn explore-btn" id="explore-bridge">Explore</button>
+      <div id="bridge-content">
+        <div class="troll">
+          <div id="troll"></div>
+          <div id="troll-stats"></div>
+        </div>
+        <button class="btn fight-btn" id="troll-btn">FIGHT</button>
+        <button class="btn fight-btn" id="troll-init">
+          Roll for Initiative
+        </button>
+        <div class="item" id="shield">
+          <button class="btn item-btn" id="shield-btn">Take Shield</button>
+        </div>
+      </div>
+      <div id="bridge-player">
+        <div class="player"></div>
+        <div class="stats" id="bridge-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="forest-ret-btn">Back</button>
+            </li>
+            <li>
+              <button class="btn nav-btn" id="creek-btn">To Creek</button>
+            </li>
+            <li><button class="btn nav-btn" id="hut-btn">Forward</button></li>
+          </ul>
+        </nav>
+      </footer>
+    </section>
+    <!-- bridge -->
+    <section id="creek">
+      <header>
+        <h1>Creek</h1>
+        <h2 id="creek-message"></h2>
+      </header>
+      <div id="creek-player">
+        <div class="player"></div>
+        <div class="stats" id="creek-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="creek-bridge-btn">Back</button>
+            </li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- creek -->
+    <section id="hut">
+      <header>
+        <h1>Hut</h1>
+        <h2 id="hut-message"></h2>
+        <h4 id="hut-dialogue"></h4>
+      </header>
+      <button class="btn explore-btn" id="explore-hut">Explore</button>
+      <div id="hut-content">
+        <div class="item" id="leather-gloves"></div>
+        <button class="btn item-btn" id="glove-btn">Take Leather Gloves</button>
+      </div>
+      <!-- hutCont-->
+      <div id="ambush">
+        <div id="people">
+          <div id="guard1"></div>
+          <div id="witch"></div>
+          <div id="guard2"></div>
+        </div>
+        <div id="target-btns">
+          <button class="btn fight-btn" id="targ-guard1">Target Guard 1</button>
+          <button class="btn fight-btn" id="targ-witch">Target Witch</button>
+          <button class="btn fight-btn" id="targ-guard2">Target Guard 2</button>
+        </div>
+      </div>
+      <!-- ambush -->
+      <div id="hut-player">
+        <div class="player"></div>
+        <div class="stats" id="hut-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="bridge-ret-btn">Back</button>
+            </li>
+            <li><button class="btn nav-btn" id="hut2-btn">Enter</button></li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- hut -->
+    <section id="hut2">
+      <header>
+        <h1>Witch's Hut</h1>
+        <h2 id="hut2-message"></h2>
+        <h4 id="hut2-dialogue"></h4>
+      </header>
+      <button class="btn explore-btn" id="explore-hut2">Explore</button>
+      <div id="hut2-content">
+        <div class="item" id="mega-potion"></div>
+        <button class="item-btn" id="mega-pot-btn">Take Mega Potion</button>
+      </div>
+      <div id="hut2-player">
+        <div class="player"></div>
+        <div class="stats" id="hut2-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li><button class="btn nav-btn" id="hut-ret-btn">Leave</button></li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- hut-int -->
+    <section id="champion">
+      <header>
+        <h1>Winner!!</h1>
+        <h2 id="champion-message"></h2>
+      </header>
+      <div id="champion-player">
+        <div class="player"></div>
+        <div class="stats" id="champion-stats"></div>
+      </div>
+      <button class="" id=""></button>
+      <footer>
+        <nav>
+          <ul>
+            <li></li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- champion -->
+    <section id="hell">
+      <header>
+        <h1>Hell</h1>
+        <h2 id="hell-message"></h2>
+      </header>
+      <button class="btn explore-btn" id="explore-hell">Explore</button>
+      <div id="hell-content">
+        <h4 id="hell-dialogue"></h4>
+        <div class="people">
+          <div id="demon">
+            <button class="btn talk-btn" id="demon-btn">Talk to Demon</button>
+          </div>
+          <!-- demon -->
+          <div id="lawyer">
+            <button class="btn talk-btn" id="lawyer-btn">Talk to lawyer</button>
+          </div>
+          <!--lawyer-->
+        </div>
+        <!-- people-->
+      </div>
+      <!-- hell content-->
+      <div id="hell-player">
+        <div class="dead-player"></div>
+        <div class="stats" id="hell-stats"></div>
+      </div>
+      <footer>
+        <nav>
+          <ul>
+            <li>
+              <button class="btn nav-btn" id="restart-btn">Try Again?</button>
+            </li>
+          </ul>
+        </nav>
+        <h5>&copy ShenendoahT 2022</h5>
+      </footer>
+    </section>
+    <!-- hell -->
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,660 @@
+html, body {
+  margin: 0 auto;
+  height: 100vh;
+}
+
+/* TYPOGRAPHY */
+label {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}
+h1, h2, h3, h5 {
+  text-align: center;
+  padding: .5em;
+  color: whitesmoke;
+}
+h4 {
+  margin-left: 20px;
+  padding: .5em;
+  color: ivory;
+  font-weight: bolder;
+}
+p {
+  max-width: 90ch;
+  flex-wrap: normal;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
+a:visited {
+  text-decoration: underline;
+  color: purple;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+  cursor: grab;
+  color: red;
+}
+.resources {
+  text-indent: 20px;
+  font-weight: bolder;
+}
+/* TYPOGRAPHY  */
+
+/* LAYOUT */
+header, footer {
+  background: transparent;
+  padding: 1em;
+  margin: 0;
+}
+input {
+  border: 2px solid gray;
+  height: 30px;
+  width: 450px;
+  margin: 20px auto;
+  border-style: inset;
+  background-color: lightgray;
+  color: black;
+  font-weight: normal;
+  display: block;
+}
+nav ul {
+  margin: 5em auto;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* LAYOUT */
+
+/* BUTTONS */
+
+button {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 2em;
+  color: white;
+  background-color: darkred;
+  text-align: center;
+  padding: .5em 1.5em;
+  margin: 2em auto;
+  transition: 1s;
+  text-transform: uppercase;
+}
+button:hover, 
+button:focus {
+  background-color: orangered;
+  letter-spacing: 2px;
+  cursor: grab;
+}
+.explore-btn {
+  background-color: lightskyblue;
+  color: black;
+  font-weight: bolder;
+}
+.explore-btn:hover,
+.explore-btn:focus {
+  background-color: aqua;
+}
+.nav-btn {
+  background-color: rgb(33,0,31);
+  color: white;
+}
+.nav-btn:hover,
+.nav-btn:focus {
+  background-color: darkviolet;
+}
+.talk-btn {
+  margin: 10px auto;
+  font-weight: normal;
+  padding: 5px 15px;
+  background-color: lightslategray;
+  color: black;
+}
+.talk-btn:hover,
+.talk-btn:focus {
+  background-color: aliceblue;
+  font-weight: bolder;
+}
+.search-btn {
+  margin: 15px auto;
+  padding: 1em;
+  background-color: slategray;
+  color: black;
+}
+.search-btn:hover,
+.search-btn:focus {
+  background-color: slateblue;
+}
+.item-btn {
+  background-color: midnightblue;
+  color: white;
+  padding: .5em 1em;
+}
+.item-btn:hover,
+.item-btn:focus {
+  background-color: blue;
+}
+.buy-btn {
+  background-color: rgba(220, 153, 20, 0.644);
+  color: rgb(33,0,31);
+  padding: .2em .5em;
+  margin-top: 70%;
+  
+}
+.buy-btn:hover,
+.buy-btn:focus {
+  background-color: orange;
+  font-weight: bold;
+}
+#bar-btns, 
+#drunk-btns {
+  display: flex;
+  justify-content: space-around;
+}
+.choice-btn {
+  display: flex;
+  justify-content: space-between;
+  background-color: saddlebrown;
+}
+.choice-btn:hover,
+.choice-btn:focus {
+  background-color: brown;
+}
+
+#roll-btns {
+  display: flex;
+  flex-direction: row;
+}
+.roll-btn {
+  background-image: url('img/elements/r20die.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  margin: 20px auto;
+  height: 60px;
+  width: 60px;
+  padding-top: 7em;
+  color: black;
+  font-weight: bold;
+  border: none;
+  transition: 1s;
+}
+.roll-btn:hover,
+.roll-btn:focus {
+  height: 75px;
+  width: 75px;
+  background-color: transparent;
+}
+#bar-btns,
+#drunk-btns,
+.item-btn {
+  display: none;
+}
+.challenge-btns {
+  justify-content: space-around;
+  display: none;
+}
+.bar-talk-btns {
+  display: flex;
+  justify-content: space-around;
+}
+#demon-btn, #lawyer-btn {
+  margin-top: 210px;
+}
+/* BUTTONS */
+
+/* SCROLL */
+.scroll {
+  background-image: url('img/elements/scroll.png');
+  background-size: cover;    
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 70%;
+  width: 40%;
+  margin: 20px auto;
+  padding: 5em;
+  flex-flow: wrap;
+}
+.scroll-text {
+    line-height: 1.5rem;
+    margin: 10px 0;
+    padding: .5em;
+    max-width: 50%;
+    margin-left: .5em;
+}
+/* SCROLL */
+
+/* BACKGROUNDS */
+#welcome {
+  background-image: url('img/locations/welcome.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#townSquare {
+    background-image: url('img/locations/town.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#house {
+  background-image: url('img/locations/house.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#bedroom {
+   background-image: url('img/locations/bedroom.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#chest{
+   background-image: url('img/locations/closet.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#tavern{
+   background-image: url('img/locations/tavern.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#room{
+background-image: url('img/locations/room.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#shop{
+  background-image: url('img/locations/store.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#arena{
+  background-image: url('img/locations/arena.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#stage{
+   background-image: url('img/locations/stage.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#forest{
+  background-image: url('img/locations/forest.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#bridge{
+  background-image: url('img/locations/bridge.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* #creek{
+  
+} */
+#hut{
+   background-image: url('img/locations/hut.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#hut2{
+    background-image: url('img/locations/hut2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#champion{
+  background-image: url('img/locations/champion.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#hell{
+    background-image: url('img/locations/hell.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* BACKGROUNDS */
+
+/* ELEMENTS */
+.content {
+    min-height: 200px;
+    height: auto;
+    width: 500px;
+    margin: 0 auto;
+}
+#town-content,
+#chest-content,
+#tavern-content,
+#room-content,
+#shop-content,
+#arena-content,
+#stage-content,
+#forest-content,
+#bridge-content,
+#hut-content,
+#hut2-content,
+#hell-content {
+    display: none;
+}
+#tavern-content {
+  flex-direction: column;
+}
+#fountain {
+  background-image: url('img/elements/fountain.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 300px;
+  margin: 10px auto;
+} 
+/* ELEMENTS */
+
+/* ITEMS */
+.drinks {
+  display: flex;
+  justify-content: space-around;
+}
+.shop-items {
+  height: 300px;
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-evenly;
+  padding: .5em;
+}
+.item,
+.weapon {
+  margin: 0 auto;
+  min-height: 20px;
+  min-width: 20px;
+  padding: .2em;
+}
+#coins {
+  background-image: url('img/items/coins.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 25px;
+}
+#ale {
+  background-image: url('img/items/ale.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+}
+#mead {
+  background-image: url('img/items/mead.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+}
+#purse {
+  background-image: url('img/items/purse.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px; 
+  width: 100px;
+}
+#potion {
+  background-image: url('img/items/potion.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+}
+/* #arrows {} */
+#shield {
+  background-image: url('img/items/shield.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+}
+#leather-gloves {
+  background-image: url('img/items/gloves.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+}
+#mega-potion {
+  background-image: url('img/items/megapotion.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 150px;
+}
+#helm {
+  background-image: url('img/items/helm.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+}
+#table {
+  display: inline-flex;
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  background-color: transparent;
+}
+#coins,
+#ale,
+#mead,
+#purse {
+  display: none;
+}
+/* ITEMS */
+
+/* WEAPONS */
+#training-sword,
+#dagger,
+#bow,
+#sword {
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  display: block;
+}
+#training-sword {
+  background-image: url('img/weapons/training-sword.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#dagger {
+  background-image: url('img/weapons/dagger.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#dagger:hover,
+#bow:hover,
+#sword:hover {
+  height: 300px;
+  width: 300px;
+}
+#bow {
+  background-image: url('img/weapons/bow.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#sword {
+  background-image: url('img/weapons/broadsword.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* WEAPONS */
+
+/* PEOPLE */
+.people,
+.bar-people {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+#person,
+#soldier {
+  display: block;
+  margin: 20px auto;
+  height: 200px;
+  width: 200px;
+}
+#monk,
+#oldwoman,
+#bartender,
+#drunk {
+  display: flex;
+  padding: 70px 15px 15px 70px;
+  height: 100px;
+  width: 100px;
+}
+#monk {
+  background-image: url('img/people/monk.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#oldwoman {
+  background-image: url('img/people/oldwoman.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#soldier {
+  background-image: url('img/people/soldier.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#bartender {
+  background-image: url('img/people/bartender.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#drunk {
+  background-image: url('img/people/drunkard.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#demon {
+  background-image: url('img/people/demon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+}
+#lawyer {
+  background-image: url('img/people/lawyer.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+}
+/* PEOPLE */
+
+/* PLAYER */
+.player, .dead-player, .foe {
+  height: 250px;
+  width: 250px;
+  margin: 20px auto;
+  padding: .3em;
+}
+.player {
+  background-image: url('img/people/player.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.dead-player {
+  background-image: url('img/people/player-dead.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.stats {
+  text-align: center;
+  margin: 10px auto;
+  max-width: 50ch;
+  padding: .5em;
+  background-color: rgba(154, 154, 154, 0.49);
+  color: rgb(33,0,31);
+  font-weight: bold;
+}
+#wel-player,
+#town-player,
+#house-player,
+#bed-player,
+#chest-player,
+#tav-player,
+#room-player,
+#shop-player,
+#arena-player,
+#stage-player,
+#forest-player,
+#bridge-player,
+#hut-player,
+#hut2-player,
+#champion-player,
+#hell-player {
+  display: none;
+}
+/* PLAYER */
+
+/* FOES */
+.foe-stats {
+  text-align: center;
+  margin: 8px auto;
+  max-width: 70ch;
+  padding: .3em;
+  background-color: rgba(150, 150, 150, 0.355);
+  color: rgb(44, 5, 5);
+  font-style: italic;
+}
+/* FOES */
+
+/* HIDDEN DISPLAYS */
+#townSquare, 
+#house, 
+#bedroom, 
+#chest, 
+#tavern, 
+#room, 
+#shop, 
+#arena, 
+#stage, 
+#forest, 
+#bridge, 
+#creek, 
+#hut, 
+#hut2, 
+#champion, 
+#hell {
+  display: none;
+}
+#input-el,
+#player-btn,
+#town-btn,
+#roll-btns,
+#coin-btn,
+#bar-btns,
+#drunk-btns,
+#search-table,
+#ale-btn,
+#mead-btn,
+#purse-btn
+#potion-btn,
+#t-sword-btn,
+#training-sword,
+#helm-btn,
+#arrow-btn,
+#glove-btn,
+#mega-pot-btn,
+#fight-btn {
+  display: none;
+}
+/* DISPLAYS */
+
+/* MEDIA QUERIES */
+
+
+/* MEDIA QUERIES */
